@@ -17,4 +17,14 @@ export const styles = StyleSheet.create({
     color: colors.red,
     marginTop: 8
   },
+  noAccountWrapper: {
+    marginTop: 32,
+    flexDirection: 'row',
+    alignSelf: 'center',
+    flex: 1
+  },
+  signUpText: {
+    color: colors.red,
+    marginLeft: 8
+  }
 });

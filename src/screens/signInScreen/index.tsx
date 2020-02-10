@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import Logo from './_components/logo';
 import { styles } from './styles';
@@ -21,11 +21,17 @@ export default class SignInScreen extends Component<Props> {
         <CustomText text='Please enter your' />
         <CustomText text='details to sign in' style={{ marginBottom: 32 }} />
 
-        <CustomInput label='Phone Number' />
-        <CustomInput label='Pin' style={{ marginTop: 16 }} isPin />
+        <CustomInput label='Phone Number' keyboardType='numeric' />
+        <CustomInput label='Pin' style={{ marginTop: 16 }} isPin keyboardType='numeric' />
         <CustomText text='forgot your pin?' style={styles.forgotPin} />
 
         <CustomButton label='Sign in' style={styles.button} />
+        <View style={styles.noAccountWrapper}>
+          <CustomText text="Don't have an account?" />
+          <CustomText text='Sign up' style={styles.signUpText} />
+        </View>
+
+        <CustomText text={'copyright \u00A9 meetup'} style={{ textAlign: 'center' }} />
         {AbstractShape(this.props)}
       </ScrollView>
     );

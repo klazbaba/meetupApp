@@ -9,6 +9,7 @@ interface Props {
   label: string;
   style?: object;
   isPin?: boolean;
+  keyboardType: string;
 }
 
 export default function(props: Props) {
@@ -16,7 +17,7 @@ export default function(props: Props) {
     <View style={props.style}>
       <CustomText text={props.label} />
       <View style={styles.row}>
-        <TextInput style={styles.inputWrapper} />
+        <TextInput style={styles.inputWrapper} keyboardType={props.keyboardType} />
         {props.isPin ? <Icon name='eye-off' style={styles.icon} /> : null}
       </View>
     </View>
