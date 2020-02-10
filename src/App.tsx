@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 const AuthStack = createStackNavigator(
   {
     SignInScreen: {
-      getScreen: () => require('./screens/screens/signInScreeen').default
+      getScreen: () => require('./screens/signInScreen').default
     }
   },
   {

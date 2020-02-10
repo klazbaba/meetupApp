@@ -6,6 +6,7 @@ import { styles } from './styles';
 import CustomText from '../_components/CustomText';
 import AbstractShape from '../_components/AbstractShape';
 import CustomInput from '../_components/CustomInput';
+import CustomButton from '../_components/CustomButton';
 
 interface Props {
   navigation: any;
@@ -21,8 +22,10 @@ export default class SignInScreen extends Component<Props> {
         <CustomText text='details to sign in' style={{ marginBottom: 32 }} />
 
         <CustomInput label='Phone Number' />
-        <CustomInput label='Pin' style={{ marginTop: 16 }} />
+        <CustomInput label='Pin' style={{ marginTop: 16 }} isPin />
+        <CustomText text='forgot your pin?' style={styles.forgotPin} />
 
+        <CustomButton label='Sign in' style={styles.button} />
         {AbstractShape(this.props)}
       </ScrollView>
     );
