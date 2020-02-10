@@ -9,8 +9,8 @@ const AuthStack = createStackNavigator(
     SignUpScreen: {
       getScreen: () => require('./screens/signUpScreen').default
     },
-    CongratScreen: {
-      getScreen: () => require('./screens/congratScreen').default
+    GuideScreen: {
+      getScreen: () => require('./screens/guideScreen').default
     }
   },
   {

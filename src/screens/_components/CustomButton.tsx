@@ -16,7 +16,7 @@ export default function CustomButton(props: Props) {
   return (
     <LinearGradient
       colors={[colors.lightred, colors.red]}
-      style={styles.wrapper}
+      style={[styles.wrapper, props.style]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
     >

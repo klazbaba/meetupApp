@@ -3,6 +3,7 @@ import { TextInput, View, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
 
 import CustomText from './CustomText';
+
 import { colors } from '../../colors';
 
 interface Props {
@@ -10,12 +11,19 @@ interface Props {
   style?: object;
   isPin?: boolean;
   keyboardType: string;
+  showError?: boolean;
 }
 
 export default function(props: Props) {
   return (
     <View style={props.style}>
-      <CustomText text={props.label} />
+      <View style={styles.labelRow}>
+        <CustomText text={props.label} style={{ color: props.showError ? colors.red : null }} />
+        {props.showError ? (
+          <CustomText text='Wrong pin. Please try again' style={styles.wrongPin} />
+        ) : null}
+      </View>
+
       <View style={styles.row}>
         <TextInput style={styles.inputWrapper} keyboardType={props.keyboardType} />
         {props.isPin ? <Icon name='eye-off' style={styles.icon} /> : null}
@@ -40,5 +48,12 @@ const styles = StyleSheet.create({
   icon: {
     color: colors.grey,
     marginRight: 8
+  },
+  labelRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  wrongPin: {
+    color: colors.red
   }
 });
