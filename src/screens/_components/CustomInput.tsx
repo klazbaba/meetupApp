@@ -10,8 +10,23 @@ interface Props {
   label: string;
   style?: object;
   isPin?: boolean;
-  keyboardType: string;
+  keyboardType?:
+    | 'default'
+    | 'numeric'
+    | 'email-address'
+    | 'ascii-capable'
+    | 'numbers-and-punctuation'
+    | 'url'
+    | 'number-pad'
+    | 'phone-pad'
+    | 'name-phone-pad'
+    | 'decimal-pad'
+    | 'twitter'
+    | 'web-search'
+    | 'visible-password';
   showError?: boolean;
+  onChangeText: (text: string) => void;
+  maxLength?: number;
 }
 
 export default function(props: Props) {
@@ -25,7 +40,12 @@ export default function(props: Props) {
       </View>
 
       <View style={styles.row}>
-        <TextInput style={styles.inputWrapper} keyboardType={props.keyboardType} />
+        <TextInput
+          style={styles.inputWrapper}
+          keyboardType={props.keyboardType}
+          onChangeText={props.onChangeText}
+          maxLength={props.maxLength}
+        />
         {props.isPin ? <Icon name='eye-off' style={styles.icon} /> : null}
       </View>
     </View>

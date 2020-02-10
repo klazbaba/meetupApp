@@ -12,7 +12,12 @@ interface Props {
   navigation: any;
 }
 
-export default class GuideScreen extends Component {
+export default class GuideScreen extends Component<Props> {
+  gotoHome = () => {
+    const { navigate } = this.props.navigation;
+    navigate('HomeScreen');
+  };
+
   render() {
     return (
       <ScrollView contentContainerStyle={styles.container} style={{ flex: 1 }}>
@@ -21,7 +26,7 @@ export default class GuideScreen extends Component {
         <CustomText text='Connect with your business partners' />
         <CustomText text='and associates using the new platform' style={{ marginBottom: 32 }} />
 
-        <CustomButton label='Skip Introduction' style={styles.button} />
+        <CustomButton label='Skip Introduction' style={styles.button} onPress={this.gotoHome} />
         <CustomText text={'copyright \u00A9 meetup'} style={styles.copyright} />
         {AbstractShape(this.props)}
       </ScrollView>

@@ -1,4 +1,4 @@
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 const AuthStack = createStackNavigator(
@@ -18,6 +18,12 @@ const AuthStack = createStackNavigator(
   }
 );
 
-const AppStack = createAppContainer(AuthStack);
+const MainStack = createStackNavigator({
+  HomeScreen: {
+    getScreen: () => require('./screens/homeScreen').default
+  }
+});
+
+const AppStack = createAppContainer(createSwitchNavigator({ AuthStack, MainStack }));
 
 export default AppStack;
