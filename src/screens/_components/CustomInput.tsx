@@ -27,7 +27,8 @@ export default function(props: Props) {
 const styles = StyleSheet.create({
   inputWrapper: {
     paddingHorizontal: 8,
-    paddingTop: 0,
+    paddingTop: 6,
+    paddingBottom: 6,
     flex: 1
   },
   row: {

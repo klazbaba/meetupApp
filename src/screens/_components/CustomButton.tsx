@@ -9,6 +9,7 @@ import { colors } from '../../colors';
 interface Props {
   label: string;
   style?: object;
+  onPress: () => void;
 }
 
 export default function CustomButton(props: Props) {
@@ -19,7 +20,7 @@ export default function CustomButton(props: Props) {
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
     >
-      <Button style={[styles.buttonWrapper, props.style]}>
+      <Button style={styles.buttonWrapper} onPress={props.onPress}>
         <CustomText text={props.label} style={styles.label} />
       </Button>
     </LinearGradient>

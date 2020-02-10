@@ -12,18 +12,23 @@ export const styles = StyleSheet.create({
     marginTop: 64,
     marginBottom: 32
   },
-  forgotPin: {
-    alignSelf: 'flex-end',
-    color: colors.red,
-    marginTop: 8
-  },
-  noAccountWrapper: {
-    marginTop: 32,
+  checkRow: {
     flexDirection: 'row',
-    alignSelf: 'center',
+    marginTop: 16,
+    alignItems: 'flex-end'
+  },
+  checkBox: {
+    left: 0,
+    marginRight: 8
+  },
+  button: {
     flex: 1
   },
-  signUpText: {
+  bottomComponent: {
+    flexDirection: 'row',
+    alignSelf: 'center'
+  },
+  signInText: {
     color: colors.red,
     marginLeft: 8
   }
